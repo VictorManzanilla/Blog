@@ -17,12 +17,17 @@ app.get('/about', (req, res) => {
     res.render('about.ejs')
 })
 
-app.get('/create', (req, res) => {
-    res.render('create.ejs')
+app.get("/create", (req, res) => {
+    res.render("create.ejs")
 })
-app.post('/submit', (req,res) => {
-    res.render('create.ejs')
+app.post("/submit", (req,res) => {
+    // console.log(req.body["message"])
+    const text = req.body["message"]
+    const writer = req.body["author"]
+    res.render('index.ejs', {message: text, author: writer})
 })
+//look up id 
+app.put('/user')
 
 
 
