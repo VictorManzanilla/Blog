@@ -1,11 +1,11 @@
 <h1>
-    Create Blog
+    Edit Blog
 </h1>
 
 
  
 
-<form action="/submit" method="POST">
+<form action='/user/:id' method="POST">
 <textarea name="message" rows="10" cols="30" placeholder="Enter text">
    
  </textarea>
@@ -15,5 +15,5 @@
   <input type="text" id="author" name="author"><br>
 
 
-    <input type="submit" value="Create New Post">
+    <input type="submit" value="Edit Post">
   </form>

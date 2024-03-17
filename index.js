@@ -17,6 +17,10 @@ app.get('/about', (req, res) => {
     res.render('about.ejs')
 })
 
+app.get('/edit', (req, res) => {
+    res.render('edit.ejs')
+})
+
 app.get("/create", (req, res) => {
     res.render("create.ejs")
 })
@@ -26,8 +30,8 @@ app.post("/submit", (req,res) => {
     const writer = req.body["author"]
     res.render('index.ejs', {message: text, author: writer})
 })
-//look up id 
-app.put('/user')
+//look up id         
+// app.put()
 
 
 

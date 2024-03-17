@@ -2,7 +2,12 @@
     Blog
 </h1>
 
+<form action="/create">
+  <input type="submit" value="Create New blog" />
+</form>
+
 <h2>blog entry</h2>
+<div style="border: 2px solid powderblue">
 <% if (locals.message && locals.author) { %>
     <h2>
       <%= message %>
@@ -10,6 +15,12 @@
     <h3> <%= author %> </h3>
  <% } else { %>
     <h1>
-      No entry Roman ugly
+      No entry
     </h1>
 <% } %>
+
+<form action="/edit">
+  <input type="submit" value="Edit Blog" />
+</form>
+
+</div>
