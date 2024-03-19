@@ -8,17 +8,28 @@ app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+let posts = [
+{
+    id: 1,
+    title: 'Dummy 1 story',
+    message: 'dummy1 Hello',
+    author: 'dummy1'
+},
+{
+    id: 2,
+    title: 'Dummy 1 story',
+    message: 'dummy2 Hello',
+    author: 'dummy2'
+}
+]
+
 
 app.get('/', (req,res) => {
-    res.render('index.ejs')
+    res.render('index.ejs', {posts})
 })
 //Don't know if I will use this route
 app.get('/about', (req, res) => {
     res.render('about.ejs')
-})
-
-app.get('/edit', (req, res) => {
-    res.render('edit.ejs')
 })
 
 app.get("/create", (req, res) => {
@@ -30,8 +41,23 @@ app.post("/submit", (req,res) => {
     const writer = req.body["author"]
     res.render('index.ejs', {message: text, author: writer})
 })
-//look up id         
-// app.put()
+
+app.get('/edit/:id', (req, res) => {
+    // console.log(req.params.id)
+    const id = parseInt(req.params.id)
+    const post = posts.find(post => post.id === id)
+    res.render('edit.ejs', {post})
+})
+
+        
+app.post('/edit/:id', (req,res) => {
+    console.log(req.params.id)
+    const postID = req.params.id
+    res.render('post.ejs', {postID})
+ })
+
+
+
 
 
 

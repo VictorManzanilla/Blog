@@ -8,6 +8,7 @@
 
 <h2>blog entry</h2>
 <div style="border: 2px solid powderblue">
+
 <% if (locals.message && locals.author) { %>
     <h2>
       <%= message %>
@@ -18,9 +19,23 @@
       No entry
     </h1>
 <% } %>
+<div>
+  <ul>
+ 
 
-<form action="/edit">
-  <input type="submit" value="Edit Blog" />
-</form>
+  <% posts.forEach((post) => { %>
+    
+    <li> 
+      <h2><%= post.title %></h2>
+      <p> <%= post.message  %>  </p>
+      <h4> <%= post.author %> </h4>
+      <a href="/edit/<%= post.id %>"> Edit</a>
+      <a href="/delete/<%= post.id %>"> Delete</a>
+      </li> 
+   <% });  %> 
+  </ul>
+</div>
+
+
 
 </div>

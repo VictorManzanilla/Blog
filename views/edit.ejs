@@ -5,14 +5,18 @@
 
  
 
-<form action='/user/:id' method="POST">
+<form action='/edit/:id' method="POST">
+  <label for="title">Title:</label><br>
+  <input type="text" id="title" name="title" value="<%= post.title %>"><br>
 <textarea name="message" rows="10" cols="30" placeholder="Enter text">
-   
+   <%= post.message %>
  </textarea>
  <br>
 
  <label for="author">Author:</label><br>
-  <input type="text" id="author" name="author"><br>
+  <input type="text" id="author" name="author" value="<%= post.author %>">
+  <br>
+ 
 
 
     <input type="submit" value="Edit Post">
