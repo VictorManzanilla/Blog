@@ -69,6 +69,13 @@ app.post('/update/:id', (req,res) => {
     res.redirect('/')
  })
 
+ app.get('/delete/:id', (req,res) => {
+    const id = parseInt(req.params.id)
+    posts = posts.filter(post => {
+        post.id !== id
+    })
+    res.redirect('/')
+ })
 
 
 
