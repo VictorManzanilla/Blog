@@ -37,9 +37,14 @@ app.get("/create", (req, res) => {
 })
 app.post("/submit", (req,res) => {
     // console.log(req.body["message"])
-    const text = req.body["message"]
-    const writer = req.body["author"]
-    res.render('index.ejs', {message: text, author: writer})
+  const {title, message, author} = req.body
+    posts.push({
+        id: posts.length + 100,
+        title,
+        message,
+        author
+    })
+    res.redirect('/')
 })
 
 app.get('/edit/:id', (req, res) => {
@@ -50,10 +55,18 @@ app.get('/edit/:id', (req, res) => {
 })
 
         
-app.post('/edit/:id', (req,res) => {
-    console.log(req.params.id)
-    const postID = req.params.id
-    res.render('post.ejs', {postID})
+app.post('/update/:id', (req,res) => {
+    // console.log(req.params.id)
+    const id = parseInt(req.params.id)
+    // console.log(id)
+    const {title, message, author} = req.body;
+    const index = posts.findIndex(post => post.id === id)
+        if(index !== -100 ){
+            posts[index].title = title
+            posts[index].message = message
+            posts[index].author = author
+        }
+    res.redirect('/')
  })
 
 

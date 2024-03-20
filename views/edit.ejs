@@ -5,7 +5,7 @@
 
  
 
-<form action='/edit/:id' method="POST">
+<form action="/update/<%=post.id%>" method="POST">
   <label for="title">Title:</label><br>
   <input type="text" id="title" name="title" value="<%= post.title %>"><br>
 <textarea name="message" rows="10" cols="30" placeholder="Enter text">
@@ -19,5 +19,5 @@
  
 
 
-    <input type="submit" value="Edit Post">
+    <input type="submit" value="Update Post">
   </form>
