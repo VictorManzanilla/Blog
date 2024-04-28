@@ -9,8 +9,12 @@ body {
 
 
 .new-blog {
-    display: flex;
+    position: fixed;
     background-color: #FFF455;
     border-radius: 50%;
 }
 
+.logo{
+  height: 7rem;
+  width: 7rem;
+}
