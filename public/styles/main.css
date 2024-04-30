@@ -1,7 +1,8 @@
 body {
     font-family: "Poppins", sans-serif;
     margin: 50px 50px 0 50px;
-    background-color: #007F73;
+    background-color: white;
+    
     display: flex;
     flex-direction: column;
     min-height: 95vh;
@@ -10,9 +11,17 @@ body {
 
 .new-blog {
     position: fixed;
-    background-color: #FFF455;
+    background-color: white;
     border-radius: 50%;
+    left: 60%;
+    height: 40px;
+    width: 40px;
+    
 }
+  .new-blog:hover {
+    background-color: black;
+    color: white;
+  }
 
 .logo{
   height: 7rem;
