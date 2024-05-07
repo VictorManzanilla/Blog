@@ -27,3 +27,15 @@ body {
   height: 7rem;
   width: 7rem;
 }
+
+/* .main{
+  border: 2px solid black;
+  box-shadow: 10px 5px 5px black;
+} */
+
+.single-post{
+  list-style-type: none;
+  border: 2px solid black;
+  box-shadow: 10px 5px 5px black;
+  
+}
