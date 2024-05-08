@@ -21,16 +21,18 @@
  
 
   <% posts.forEach((post) => { %>
-    
-    <li class="single-post"> 
-      <h2><%= post.title %></h2>
-      <p> <%= post.message  %>  </p>
-      <h4> <%= post.author %> </h4>
-      <a href="/edit/<%= post.id %>"> Edit</a>
-      <a href="/delete/<%= post.id %>"> Delete</a>
-      </li> 
-      <br>
-   <% });  %> 
+   
+      <li class="single-post"> 
+        <h2><%= post.title %></h2>
+        <p> <%= post.message  %>  </p>
+        <h4> <%= post.author %> </h4>
+        <a class="edit-button" href="/edit/<%= post.id %>"> Edit</a>
+        <a href="/delete/<%= post.id %>"> Delete</a>
+        </li> 
+        <br>
+     <% });  %> 
+   
+   
   </ul>
 </div>
 
