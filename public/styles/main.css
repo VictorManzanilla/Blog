@@ -5,6 +5,7 @@ body {
     
     display: flex;
     flex-direction: column;
+  
     min-height: 95vh;
   }
 
@@ -59,4 +60,13 @@ body {
   border: 2px solid white;
   color: white;
   background-color: black;
+}
+
+@media (max-width: 600px) {
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
 }
