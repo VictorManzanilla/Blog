@@ -2,13 +2,16 @@ body {
     font-family: "Poppins", sans-serif;
     margin: 100px 100px 0 100px;
     background-color: silver;
-    
-    display: flex;
-    flex-direction: column;
-  
+
+   
     min-height: 95vh;
   }
 
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+  }
 
 .new-blog {
     position: fixed;
@@ -24,7 +27,7 @@ body {
     color: white;
   }
 
-  .nav{
+  nav {
     display: flex;
     justify-content: space-between;
     background-color: rgb(34, 31, 31);
@@ -63,10 +66,10 @@ body {
 }
 
 @media (max-width: 600px) {
-  .body {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 1fr;
+  body {
+    display: flex;
+    flex-direction: column;
+  
   }
 
 }
