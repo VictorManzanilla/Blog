@@ -7,11 +7,7 @@ body {
     min-height: 95vh;
   }
 
-  .container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 1fr;
-  }
+ 
 
 .new-blog {
     position: fixed;
@@ -44,10 +40,12 @@ body {
     width: 1rem;
 }
 
-/* .main{
-  border: 2px solid black;
-  box-shadow: 10px 5px 5px black;
-} */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
 
 .single-post{
   list-style-type: none;

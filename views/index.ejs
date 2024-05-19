@@ -1,24 +1,18 @@
 <%- include("partials/header.ejs") %>
 
-
-
-
-
 <body>
-
-<% if (locals.message && locals.author) { %>
-    <h2>
-      <%= message %>
-    </h2>
-    <h3> <%= author %> </h3>
- <% } else { %>
-    <h1>
-      No entry
-    </h1>
-<% } %>
-<div class="container">
-  <ul >
- 
+<div >
+  <ul class="container">
+   <% if (locals.message && locals.author) { %> 
+      <h2>
+        <%= message %>
+      </h2>
+      <h3> <%= author %> </h3>
+   <% } else { %>
+      <h1>
+        No entry
+      </h1>
+  <% } %>
 
   <% posts.forEach((post) => { %>
    
@@ -35,9 +29,6 @@
    
   </ul>
 </div>
-
-
-
 </body>
 
 <%- include("partials/footer.ejs") %>
