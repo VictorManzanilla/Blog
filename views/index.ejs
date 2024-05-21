@@ -1,34 +1,24 @@
 <%- include("partials/header.ejs") %>
 
 <body>
-<div >
-  <ul class="container">
-   <% if (locals.message && locals.author) { %> 
-      <h2>
-        <%= message %>
-      </h2>
-      <h3> <%= author %> </h3>
-   <% } else { %>
-      <h1>
-        No entry
-      </h1>
-  <% } %>
+  <main class="container">
+   
 
   <% posts.forEach((post) => { %>
    
-      <li class="single-post"> 
+      <div class="single-post"> 
         <h2><%= post.title %></h2>
         <p> <%= post.message  %>  </p>
         <h4> <%= post.author %> </h4>
         <a class="edit-button" href="/edit/<%= post.id %>"> Edit</a>
         <a href="/delete/<%= post.id %>"> Delete</a>
-        </li> 
+      </div> 
         <br>
      <% });  %> 
    
    
-  </ul>
-</div>
+    </main>
+
 </body>
 
 <%- include("partials/footer.ejs") %>
