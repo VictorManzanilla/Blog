@@ -41,15 +41,11 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-areas: 
-    "image main"
-    "image main";
+    display: grid;
     grid-template-columns: repeat(2 , 1fr);
     max-width: 1200px;
     margin: 20px auto;
-  gap: 10px;
-
+    gap: 10px;
 }
 
 
@@ -57,10 +53,10 @@ body {
   list-style-type: none;
   border: 2px solid black;
   box-shadow: 10px 5px 5px black;
-  padding-bottom: 20px;
-  width: 50%;
-  
-  
+  padding-bottom: 20px; 
+  width: 75%;
+  grid-column: 2;
+  place-self: center;
 }
 
 .edit-button {

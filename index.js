@@ -21,12 +21,31 @@ let posts = [
     title: 'Dummy 1 story',
     message: 'dummy2 Hello',
     author: 'dummy2'
-}
+},
+{ id: 3, title: "Post 3", message: "Message 3", author: "Author 3" },
+  { id: 4, title: "Post 4", message: "Message 4", author: "Author 4" },
+  { id: 5, title: "Post 5", message: "Message 5", author: "Author 5" },
+  { id: 6, title: "Post 6", message: "Message 6", author: "Author 6" },
+  { id: 7, title: "Post 7", message: "Message 7", author: "Author 7" },
+  { id: 8, title: "Post 8", message: "Message 8", author: "Author 8" }
 ]
 
 
 app.get('/', (req,res) => {
-    res.render('index.ejs', {posts})
+        const page = parseInt(req.query.page) || 1;
+        const postsPerPage = 4;
+        const startSection = (page -1) * postsPerPage;
+        const endSection = startSection + postsPerPage;
+
+        const paginatedPosts = posts.slice(startSection, endSection);
+        const totalPages = Math.ceil(posts.length / postsPerPage)
+
+
+    res.render('index.ejs', {
+        posts: paginatedPosts,
+        currentPage: page,
+        totalPages: totalPages
+    })
 })
 //Don't know if I will use this route
 app.get('/about', (req, res) => {

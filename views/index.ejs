@@ -2,7 +2,7 @@
 
 <body>
   <main class="container">
-   
+
 
   <% posts.forEach((post) => { %>
    
@@ -16,7 +16,12 @@
         <br>
      <% });  %> 
    
-   
+   <div class="pagination">
+    <% for(let i = 1; i <= totalPages; i++) { %>
+      <a href="/posts?page=<%= i %>" class="<%= i === currentPage ? 'active' : '' %>"><%= i %></a>
+    <% } %>
+
+   </div>
     </main>
 
 </body>
