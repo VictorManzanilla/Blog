@@ -33,7 +33,7 @@ let posts = [
 
 app.get('/', (req,res) => {
         const page = parseInt(req.query.page) || 1;
-        const postsPerPage = 4;
+        const postsPerPage = 6;
         const startSection = (page -1) * postsPerPage;
         const endSection = startSection + postsPerPage;
 
@@ -56,10 +56,11 @@ app.get("/create", (req, res) => {
     res.render("create.ejs")
 })
 app.post("/submit", (req,res) => {
-    // console.log(req.body["message"])
+    //  console.log(req.body)
+    const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
   const {title, message, author} = req.body
     posts.push({
-        id: posts.length + 100,
+        id,
         title,
         message,
         author

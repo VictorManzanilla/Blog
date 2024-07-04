@@ -11,19 +11,13 @@
         <p> <%= post.message  %>  </p>
         <h4> <%= post.author %> </h4>
         <a class="edit-button" href="/edit/<%= post.id %>"> Edit</a>
-        <a href="/delete/<%= post.id %>"> Delete</a>
+        <a class="edit-button" href="/delete/<%= post.id %>"> Delete</a>
       </div> 
-        <br>
-     <% });  %> 
+        
+     <% });  %>
+     
+  </main>
    
-   <div class="pagination">
-    <% for(let i = 1; i <= totalPages; i++) { %>
-      <a href="/posts?page=<%= i %>" class="<%= i === currentPage ? 'active' : '' %>"><%= i %></a>
-    <% } %>
-
-   </div>
-    </main>
-
 </body>
 
 <%- include("partials/footer.ejs") %>

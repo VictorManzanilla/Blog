@@ -2,8 +2,6 @@ body {
     font-family: "Poppins", sans-serif;
     margin: 100px 100px 0 100px;
     background-color: silver;
-
-   
     min-height: 95vh;
   }
 
@@ -13,7 +11,7 @@ body {
     position: fixed;
     background-color: silver;
     border-radius: 50%;
-    left: 60%;
+    right: 95%;
     height: 40px;
     width: 40px;
     
@@ -42,21 +40,17 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(2 , 1fr);
-    max-width: 1200px;
-    margin: 20px auto;
+    grid-template-columns: 1fr 1fr;
+   
+    margin: 20px; 
     gap: 10px;
 }
 
 
-.single-post{
-  list-style-type: none;
+.single-post {
   border: 2px solid black;
   box-shadow: 10px 5px 5px black;
   padding-bottom: 20px; 
-  width: 75%;
-  grid-column: 2;
-  place-self: center;
 }
 
 .edit-button {
